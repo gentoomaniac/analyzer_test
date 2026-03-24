@@ -2,7 +2,7 @@ package mypkg
 
 import "fmt"
 
-func uselessUseOfPrintF() {
+func uselessUseOfSprintF() {
 	log(fmt.Sprintf("%s%s%s", "Hello,", "World!", func() string { return "foobar" }()))
 }
 
