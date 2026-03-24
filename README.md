@@ -1,2 +1,5 @@
 # analyzer test
 
+```
+go test ./...
+```
