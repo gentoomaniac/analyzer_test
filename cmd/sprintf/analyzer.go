@@ -21,7 +21,6 @@ var Analyzer = &analysis.Analyzer{
 }
 
 func run(pass *analysis.Pass) (any, error) {
-
 	ins := pass.ResultOf[inspect.Analyzer].(*inspector.Inspector)
 
 	for call := range ins.PreorderSeq((*ast.CallExpr)(nil)) {
@@ -30,6 +29,7 @@ func run(pass *analysis.Pass) (any, error) {
 			continue
 		}
 		checkSprintf(pass, callExpr)
+		checkLogInLoop(pass, callExpr)
 	}
 	return nil, nil
 }
